@@ -34,6 +34,7 @@ namespace Parcial2Mch
             dgvLista.Columns["productor"].HeaderText = "Productor";
             dgvLista.Columns["fechaEstreno"].HeaderText = "Fecha Estreno";
             dgvLista.Columns["estado"].HeaderText = "Estado";
+            dgvLista.Columns["clasificacion"].HeaderText = "Clasificación";
             dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario Registro";
             dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
 
@@ -63,7 +64,7 @@ namespace Parcial2Mch
             new KeyValuePair<int, string>(1, "En emisión"),
             new KeyValuePair<int, string>(2, "Finalizado"),
             new KeyValuePair<int, string>(3, "Suspendido")
-    };
+            };
             cbxEstado.DisplayMember = "Value";
             cbxEstado.ValueMember = "Key";
         }
@@ -72,7 +73,7 @@ namespace Parcial2Mch
         {
             esNuevo = true;
             pnlAcciones.Enabled = false;
-            Size = new Size(763, 509);
+            Size = new Size(763, 553);
             txtTitulo.Focus();
         }
 
@@ -80,7 +81,7 @@ namespace Parcial2Mch
         {
             esNuevo = false;
             pnlAcciones.Enabled = false;
-            Size = new Size(763, 509);
+            Size = new Size(763, 553);
 
             int id = (int)dgvLista.CurrentRow.Cells["id"].Value;
             var programa = ProgramaCln.obtenerUno(id);
@@ -91,7 +92,8 @@ namespace Parcial2Mch
             nudDuracion.Value = (decimal)programa.duracion;
             txtProductor.Text = programa.productor;
             dtpFechaEstreno.Value = (DateTime)programa.fechaEstreno;
-            cbxEstado.SelectedValue = programa.estado != null ? programa.estado : 1;
+            cbxEstado.SelectedValue = Convert.ToInt32(programa.estado);
+            cbxClasificacion.Text = programa.clasificacion;
 
             txtTitulo.Focus();
         }
@@ -135,6 +137,7 @@ namespace Parcial2Mch
             erpProductor.Clear();
             erpFechaEstreno.Clear();
             erpEstado.Clear();  
+            erpClasificacion.Clear();
 
             if (string.IsNullOrEmpty(txtTitulo.Text))
             {
@@ -195,6 +198,8 @@ namespace Parcial2Mch
                 programa.usuarioRegistro = "admin";
 
                 programa.estado = Convert.ToInt16(cbxEstado.SelectedValue);
+                programa.clasificacion = cbxClasificacion.Text;
+                programa.estadoRegistro = 1;
 
                 if (esNuevo)
                 {

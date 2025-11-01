@@ -33,6 +33,7 @@ namespace ClnParcial2Mch
                 existe.productor = programa.productor;
                 existe.fechaEstreno = programa.fechaEstreno;
                 existe.estado = programa.estado;
+                existe.clasificacion = programa.clasificacion;
                 existe.usuarioRegistro = programa.usuarioRegistro;
                 return context.SaveChanges();
             }

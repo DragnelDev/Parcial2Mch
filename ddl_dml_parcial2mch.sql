@@ -37,6 +37,7 @@ CREATE TABLE Programa (
     productor VARCHAR(100),
     fechaEstreno DATE,
     estado SMALLINT,
+    clasificacion VARCHAR(20),
     
     CONSTRAINT fk_Programa_Canal 
         FOREIGN KEY (idCanal) 
@@ -70,6 +71,7 @@ BEGIN
         p.productor, 
         p.fechaEstreno, 
         p.estado,
+        p.clasificacion,
         p.usuarioRegistro,
         p.fechaRegistro,
         p.estadoRegistro
@@ -95,11 +97,12 @@ INSERT INTO Canal (nombre, frecuencia, estado) VALUES
 ('Canal 2', '102.2 FM', 1),
 ('Canal 3', '103.3 FM', 0);
 
-INSERT INTO Programa (idCanal, titulo, descripcion, duracion, productor, fechaEstreno, estado) VALUES 
-(1, 'Noticiero Matutino', 'Noticias de la mañana', 60, 'Juan Perez', '2023-01-15', 1),
-(1, 'Show de Comedia', 'Programa de comedia y entretenimiento', 30, 'Ana Gomez', '2023-02-20', 1),
-(2, 'Documental de Naturaleza', 'Explorando la vida salvaje', 45, 'Carlos Ruiz', '2023-03-10', 0),
-(3, 'Programa Deportivo', 'Resumen de eventos deportivos', 60, 'Luis Martinez', '2023-04-05', 1);
+INSERT INTO Programa (idCanal, titulo, descripcion, duracion, productor, fechaEstreno, estado, clasificacion) VALUES 
+(1, 'Noticiero Matutino', 'Noticias de la mañana', 60, 'Juan Perez', '2023-01-15', 1, '18+'),
+(1, 'Show de Comedia', 'Programa de comedia y entretenimiento', 30, 'Ana Gomez', '2023-02-20', 1, 'ATP'),
+(2, 'Documental de Naturaleza', 'Explorando la vida salvaje', 45, 'Carlos Ruiz', '2023-03-10', 0, '13+'),
+(3, 'Programa Deportivo', 'Resumen de eventos deportivos', 60, 'Luis Martinez', '2023-04-05', 1, '16+');
+
 
 -- Leer 
 SELECT * FROM Canal;

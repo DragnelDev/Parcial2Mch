@@ -29,6 +29,7 @@
           <Property Name="productor" Type="varchar" MaxLength="100" />
           <Property Name="fechaEstreno" Type="date" />
           <Property Name="estado" Type="smallint" />
+          <Property Name="clasificacion" Type="varchar" MaxLength="20" />
           <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
           <Property Name="estadoRegistro" Type="smallint" Nullable="false" />
@@ -86,6 +87,7 @@
           <Property Name="productor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="fechaEstreno" Type="DateTime" Precision="0" />
           <Property Name="estado" Type="Int16" />
+          <Property Name="clasificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="estadoRegistro" Type="Int16" Nullable="false" />
@@ -124,6 +126,7 @@
           <Property Type="String" Name="productor" Nullable="true" MaxLength="100" />
           <Property Type="DateTime" Name="fechaEstreno" Nullable="true" />
           <Property Type="Int16" Name="estado" Nullable="true" />
+          <Property Type="String" Name="clasificacion" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
           <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
           <Property Type="Int16" Name="estadoRegistro" Nullable="false" />
@@ -158,6 +161,7 @@
                 <ScalarProperty Name="productor" ColumnName="productor" />
                 <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
                 <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
                 <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
                 <ScalarProperty Name="estadoRegistro" ColumnName="estadoRegistro" />
@@ -176,6 +180,7 @@
                 <ScalarProperty Name="productor" ColumnName="productor" />
                 <ScalarProperty Name="fechaEstreno" ColumnName="fechaEstreno" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
                 <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
                 <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
                 <ScalarProperty Name="estadoRegistro" ColumnName="estadoRegistro" />
